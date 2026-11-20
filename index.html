@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CYNEZIS — Объединяем идеи. Создаём будущее.</title>
+<meta name="description" content="CYNEZIS — digital-агентство полного цикла: приложения для iOS и Android, Telegram-боты и Mini Apps, сайты, AI-автоматизация и реклама.">
+<meta name="theme-color" content="#050610">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CYNEZIS — Объединяем идеи. Создаём будущее.">
+<meta property="og:description" content="Концепт редизайна сайта digital-агентства CYNEZIS.">
+<meta property="og:image" content="https://maxiimdev.github.io/cynezis-concept/og.jpg">
+<meta property="og:url" content="https://maxiimdev.github.io/cynezis-concept/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Unbounded:wght@300;400&display=swap&subset=cyrillic" rel="stylesheet">
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<style>
+:root{
+  --bg:#050610;
+  --bg-3:#0c0e22;
+  --line:rgba(170,185,255,.10);
+  --line-2:rgba(170,185,255,.18);
+  --fg:#f4f6ff;
+  --soft:#c6c9df;
+  --muted:#8a90b0;
+  --cyan:#00e5ff;
+  --violet:#8a7aff;
+  --pink:#f06aff;
+  --sans:'Manrope',system-ui,sans-serif;
+  --wide:'Unbounded','Manrope',sans-serif;
+  --ease:cubic-bezier(.2,.75,.2,1);
+  --pad:clamp(20px,4vw,56px);
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:transparent;color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--cyan);color:var(--bg)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- living space behind every screen ---------- */
+.space{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.space canvas{position:absolute;inset:0;width:100%;height:100%}
+.neb{position:absolute;width:80vmax;height:80vmax;border-radius:50%;will-change:transform;opacity:.9}
+.neb.n1{left:-30vmax;top:-10vmax;background:radial-gradient(closest-side,rgba(0,229,255,.13),rgba(0,229,255,.04) 45%,transparent 72%)}
+.neb.n2{right:-35vmax;top:20vmax;background:radial-gradient(closest-side,rgba(138,122,255,.17),rgba(138,122,255,.05) 45%,transparent 72%)}
+.neb.n3{left:10vmax;top:60vmax;background:radial-gradient(closest-side,rgba(240,106,255,.10),rgba(240,106,255,.03) 45%,transparent 72%)}
+
+/* ---------- shared ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:15px;letter-spacing:.01em;transition:transform .35s var(--ease),box-shadow .35s var(--ease);white-space:nowrap;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--cyan);color:#03121a}
+.btn-main:hover{box-shadow:0 10px 40px -8px rgba(0,229,255,.55)}
+.btn-ghost{background:rgba(255,255,255,.04);border:1px solid var(--line-2);color:var(--fg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-ghost:hover{box-shadow:0 10px 40px -12px rgba(138,122,255,.45)}
+.sec{position:relative;padding:clamp(90px,12vw,160px) 0}
+.sec-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;margin-bottom:clamp(44px,6vw,72px)}
+.h2{margin:0;font-weight:500;font-size:clamp(34px,5.2vw,64px);line-height:1.04;letter-spacing:-.035em}
+.lead{margin:0;max-width:560px;color:var(--muted);font-size:clamp(15px,1.4vw,17px)}
+
+[data-r]{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1.1s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+[data-r].in{opacity:1;transform:none}
+
+/* ---------- header ---------- */
+.hd{position:fixed;inset:0 0 auto;z-index:50;padding:16px var(--pad)}
+.hd-in{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;height:60px;padding:0 10px 0 16px;border-radius:999px;border:1px solid transparent;transition:background .4s,border-color .4s}
+.hd.solid .hd-in{background:rgba(8,9,22,.62);border-color:var(--line);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%)}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:14px;letter-spacing:.2em}
+.logo img{width:34px;height:34px;border-radius:50%}
+.hd nav{display:flex;gap:4px}
+.hd nav a{padding:8px 14px;border-radius:999px;font-size:14px;color:var(--soft);transition:color .3s}
+.hd nav a:hover{color:var(--fg)}
+.hd .btn{height:42px;padding:0 20px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);background:rgba(255,255,255,.03);cursor:pointer;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1.5px;background:var(--fg);transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:first-child{top:17px}.burger i:last-child{top:25px}
+.menu-open .burger i:first-child{top:21px;transform:rotate(45deg)}
+.menu-open .burger i:last-child{top:21px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:45;background:rgba(5,6,16,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-direction:column;justify-content:center;padding:0 28px;gap:6px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mnav a{font-size:34px;font-weight:500;letter-spacing:-.03em;padding:6px 0}
+.mnav .btn{margin-top:24px;align-self:flex-start}
+.menu-open .mnav{opacity:1;pointer-events:auto}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;isolation:isolate}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16%;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none;z-index:0}
+.gl{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block}
+.hero-in{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(130px,19vh,210px) var(--pad) 0}
+.hero h1{margin:0;font-weight:500;font-size:clamp(42px,7.4vw,104px);line-height:.98;letter-spacing:-.045em}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 span b{display:block;font-weight:inherit;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.hero h1 span:nth-child(2) b{transition-delay:.12s}
+.hero.on h1 span b{transform:none}
+.hero h1 em{font-style:normal;color:transparent;background:linear-gradient(92deg,#fff 0%,#fff 30%,#bfefff 52%,#d8d2ff 72%,#ffd9fb 100%);-webkit-background-clip:text;background-clip:text}
+.hero p{margin:26px 0 0;max-width:600px;color:var(--soft);font-size:clamp(15px,1.45vw,18px);line-height:1.6}
+.hero .acts{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center}
+.hero .fade{opacity:0;transform:translateY(16px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.hero.on .fade{opacity:1;transform:none}
+.hero.on .fade.f2{transition-delay:.45s}.hero.on .fade.f3{transition-delay:.6s}.hero.on .fade.f4{transition-delay:.95s}
+.dirs{position:absolute;z-index:1;left:0;right:0;bottom:clamp(22px,5vh,46px);display:flex;justify-content:center;gap:clamp(18px,4vw,64px);padding:0 var(--pad);flex-wrap:wrap}
+.dirs span{font-size:clamp(13px,1.15vw,15px);font-weight:500;color:rgba(244,246,255,.82);letter-spacing:.01em}
+
+/* ---------- stats ---------- */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(12,14,34,.6),rgba(5,6,16,0))}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:clamp(28px,4vw,46px) clamp(14px,2vw,28px);border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font:300 clamp(30px,3.8vw,52px)/1 var(--wide);letter-spacing:-.04em}
+.stat b sup{font-size:.45em;color:var(--cyan);vertical-align:top;margin-left:4px;letter-spacing:0}
+.stat span{display:block;margin-top:12px;color:var(--muted);font-size:14px;line-height:1.45}
+
+/* ---------- directions: wide panels that stack like a deck as you scroll ---------- */
+.stack{position:relative}
+.panel{position:sticky;top:calc(100px + var(--i) * 18px);display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);height:clamp(440px,56vh,540px);margin-bottom:34px;border-radius:30px;overflow:hidden;border:1px solid var(--line-2);background:linear-gradient(180deg,#0a0c22,#070818);box-shadow:0 -30px 90px -30px rgba(0,0,0,.95);transform-origin:50% 0}
+.panel:last-child{margin-bottom:0}
+.panel .shade{position:absolute;inset:0;background:#04050d;opacity:0;pointer-events:none;z-index:4}
+.ptx{position:relative;z-index:2;padding:46px 20px 42px 48px;display:flex;flex-direction:column;min-height:0}
+.ptx h3{margin:0;font-weight:500;font-size:clamp(30px,3.4vw,50px);line-height:1.02;letter-spacing:-.038em}
+.ptx p{margin:16px 0 0;color:var(--soft);font-size:clamp(15px,1.3vw,17px);max-width:420px}
+.ptx ul{list-style:none;margin:auto 0 0;padding:24px 0 0;display:grid;grid-template-columns:1fr 1fr;column-gap:24px;max-width:480px}
+.ptx li{padding:9px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.pvis{position:relative;min-height:0}
+.pvis::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,#090b20 0%,rgba(9,11,32,.85) 8%,rgba(9,11,32,0) 30%)}
+/* scenes sized for panels (explicit sizes: Safari-safe) */
+.pvis .phones{align-items:center}
+.pvis .phone{width:auto;max-width:none;height:84%;aspect-ratio:auto}
+.pvis .phone img{width:auto;height:100%}
+.pvis .phone.p1{transform:translate(-74%,5%) rotate(-8deg)}
+.pvis .phone.p3{transform:translate(74%,7%) rotate(8deg)}
+.pvis .nums{padding:46px 48px 40px 26%;transform:translateZ(0);-webkit-transform:translateZ(0);animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{50%{transform:translate3d(0,-6px,0)}}
+.pvis .nums svg{left:18%;bottom:8%;width:82%;height:48%}
+.pvis .tg .a{left:22%;top:12%;width:70%}
+.pvis .tg .b{right:5%;top:46%;width:50%}
+.pvis .orb .r1{height:52%;width:auto;aspect-ratio:1/1}
+.pvis .orb .r2{height:88%;width:auto;aspect-ratio:1/1}
+.scene{overflow:hidden}
+.scene .glow{position:absolute;inset:-20%;pointer-events:none}
+.scene .cap{position:absolute;left:28px;right:28px;bottom:42px;z-index:2;font-size:14px;color:var(--soft)}
+.scene .cap b{color:var(--fg);font-weight:600}
+.s-dev .glow{background:radial-gradient(45% 40% at 50% 55%,rgba(0,229,255,.28),transparent 70%),radial-gradient(40% 35% at 70% 30%,rgba(138,122,255,.22),transparent 70%)}
+.s-growth .glow{background:radial-gradient(50% 45% at 30% 70%,rgba(138,122,255,.30),transparent 70%),radial-gradient(35% 30% at 80% 20%,rgba(0,229,255,.16),transparent 70%)}
+.s-tg .glow{background:radial-gradient(50% 45% at 60% 50%,rgba(240,106,255,.22),transparent 70%),radial-gradient(40% 35% at 25% 30%,rgba(138,122,255,.25),transparent 70%)}
+.s-all .glow{background:radial-gradient(40% 40% at 50% 46%,rgba(138,122,255,.35),transparent 70%),radial-gradient(60% 50% at 50% 50%,rgba(0,229,255,.10),transparent 70%)}
+
+/* scene: phones */
+.phones{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;perspective:1200px}
+.phone{position:absolute;width:30%;max-width:210px;aspect-ratio:506/1100;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 80px -20px rgba(0,0,0,.85),0 0 0 6px rgba(10,12,30,.6);animation:float 7s ease-in-out infinite}
+.phone img{width:100%;height:100%;object-fit:cover}
+.phone.p1{transform:translate(-78%,4%) rotate(-9deg);animation-delay:-2s}
+.phone.p2{transform:translate(0,-6%);z-index:2;animation-delay:-4s}
+.phone.p3{transform:translate(78%,6%) rotate(9deg);animation-delay:-1s}
+@keyframes float{50%{margin-top:-14px}}
+
+/* scene: numbers */
+.nums{position:absolute;inset:0;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:flex-start}
+.nums .big{font:300 clamp(50px,5.4vw,92px)/.95 var(--wide);letter-spacing:-.05em;white-space:nowrap}
+.nums .big-l{margin-top:14px;max-width:340px;color:var(--soft);font-size:15px}
+.nums svg{position:absolute;left:0;right:0;bottom:90px;width:100%;height:46%}
+.nums svg path.ln{fill:none;stroke:url(#chartLine);stroke-width:4;stroke-linecap:round}
+.nums svg path.ar{fill:url(#chartArea)}
+.nums .row{display:flex;gap:28px;margin-top:auto;position:relative;z-index:2;padding-bottom:28px}
+.nums .row div{font-size:13.5px;color:var(--muted);max-width:190px}
+.nums .row b{display:block;font:300 30px/1 var(--wide);color:var(--fg);letter-spacing:-.04em;margin-bottom:6px}
+
+/* scene: telegram */
+.tg{position:absolute;inset:0;perspective:1400px}
+.tg .shot{position:absolute;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 90px -20px rgba(0,0,0,.9)}
+.tg .shot img{width:100%;height:100%;object-fit:cover}
+.tg .a{left:7%;top:10%;width:76%;aspect-ratio:3/2;transform:rotateY(14deg) rotateX(4deg);animation:float 8s ease-in-out infinite}
+.tg .b{right:6%;top:44%;width:56%;aspect-ratio:3/2;transform:rotateY(-10deg);animation:float 8s ease-in-out -3s infinite}
+
+/* scene: orbit of projects */
+.orb{position:absolute;inset:0;display:grid;place-items:center}
+.orb .ring{position:absolute;border-radius:50%;border:1px solid rgba(170,185,255,.16);animation:spin linear infinite}
+.orb .r1{width:46%;aspect-ratio:1;animation-duration:38s}
+.orb .r2{width:78%;aspect-ratio:1;animation-duration:60s;animation-direction:reverse}
+.orb .t{position:absolute;width:20%;max-width:96px;aspect-ratio:1;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 14px 40px -10px rgba(0,0,0,.8);animation:spin linear infinite reverse}
+.orb .r1 .t{animation-duration:38s;width:30%}
+.orb .r2 .t{animation-duration:60s;animation-direction:normal;width:17%}
+.orb .t img{width:100%;height:100%;object-fit:cover}
+.orb .core{position:relative;width:16%;max-width:92px;aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 80px rgba(138,122,255,.6)}
+.orb .core img{width:100%;height:100%}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- about ---------- */
+.about .big{margin:0 auto;max-width:1060px;text-align:center;font-weight:500;font-size:clamp(26px,3.9vw,50px);line-height:1.18;letter-spacing:-.03em}
+.about .big .w{color:rgba(244,246,255,.16);transition:color .25s}
+.about .big .w.on{color:var(--fg)}
+.about .big .w.acc.on{color:var(--cyan)}
+.princ{display:grid;grid-template-columns:repeat(5,1fr);gap:0 24px;margin-top:clamp(60px,8vw,110px)}
+.princ div{padding-top:22px;border-top:1px solid var(--line-2)}
+.princ b{display:block;font-weight:600;font-size:17px;letter-spacing:-.01em}
+.princ span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+
+/* ---------- process ---------- */
+.steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.steps::before,.steps .fill{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--line-2)}
+.steps .fill{right:auto;width:calc(var(--p,0) * 100%);background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));box-shadow:0 0 12px rgba(138,122,255,.6)}
+.step .dot{width:55px;height:55px;border-radius:50%;border:1px solid var(--line-2);background:var(--bg);display:grid;place-items:center;font-weight:600;font-size:15px;color:var(--muted);transition:border-color .5s,color .5s,box-shadow .5s;position:relative;z-index:1}
+.step.on .dot{border-color:rgba(0,229,255,.6);color:var(--fg);box-shadow:0 0 0 6px rgba(0,229,255,.06),0 0 30px rgba(0,229,255,.25)}
+.step h3{margin:26px 0 6px;font-weight:600;font-size:21px;letter-spacing:-.02em}
+.step p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* ---------- work ---------- */
+.work{overflow:hidden}
+.arc{position:relative;height:clamp(520px,58vw,720px);margin-top:-30px}
+.arc-clip{position:absolute;inset:-40px calc(var(--pad) * -1) 0;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 96%);mask-image:linear-gradient(180deg,#000 70%,transparent 96%);pointer-events:none}
+.arc-ring{position:absolute;left:50%;top:0;width:0;height:0}
+.arc-ring .it{position:absolute;width:var(--s);height:var(--s);margin:calc(var(--s) / -2) 0 0 calc(var(--s) / -2);border-radius:22px;overflow:hidden;border:1px solid var(--line-2);box-shadow:0 20px 60px -20px rgba(0,0,0,.8);background:var(--bg-3)}
+.arc-ring .it img{width:100%;height:100%;object-fit:cover}
+.arc-mid{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(560px,90%);display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+.arc-glow{position:absolute;left:50%;bottom:-40%;width:120%;height:90%;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(138,122,255,.22),transparent 70%);pointer-events:none}
+.plist{margin-top:clamp(70px,9vw,120px);border-top:1px solid var(--line)}
+.prow{display:grid;grid-template-columns:96px 1.1fr 1.6fr auto;gap:28px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+.prow .th{width:96px;height:72px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg-3)}
+.prow .th img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.prow:hover .th img{transform:scale(1.08)}
+.prow h3{margin:0;font-weight:600;font-size:clamp(19px,1.8vw,24px);letter-spacing:-.02em}
+.prow h3 small{display:block;margin-top:4px;font-size:13px;font-weight:500;letter-spacing:0;color:var(--muted)}
+.prow p{margin:0;color:var(--muted);font-size:15px}
+.prow .lk{display:flex;gap:8px}
+.prow .lk a{font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--line-2);color:var(--soft);transition:border-color .3s,color .3s;white-space:nowrap}
+.prow .lk a:hover{border-color:rgba(0,229,255,.5);color:var(--fg)}
+.note{margin-top:22px;font-size:13px;color:var(--muted)}
+
+/* ---------- team: big cards, as on cynezis.com ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.mate{border:1px solid var(--line-2);border-radius:28px;overflow:hidden;background:linear-gradient(180deg,rgba(16,18,44,.78),rgba(8,9,24,.88));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column}
+.mate .ph{position:relative;aspect-ratio:16/12;overflow:hidden;background:#06071a}
+.mate .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.08);transition:transform 1.4s var(--ease)}
+.mate:hover .ph img{transform:scale(1.14)}
+.mate .ph::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(180deg,transparent,rgba(9,10,28,.9))}
+.mate .tx{padding:22px 28px 30px}
+.mate h3{margin:0;font-weight:600;font-size:23px;letter-spacing:-.02em;line-height:1.2}
+.mate .role{display:block;margin-top:8px;font-size:14.5px;font-weight:600;color:var(--cyan)}
+.mate p{margin:16px 0 0;color:var(--soft);font-size:15px;line-height:1.62}
+.mate.founder{grid-column:span 2;flex-direction:row}
+.mate.founder .ph{flex:0 0 52%;aspect-ratio:auto}
+.mate.founder .ph::after{inset:0 0 0 auto;width:30%;height:auto;background:linear-gradient(90deg,transparent,rgba(9,10,28,.92))}
+.mate.founder .tx{display:flex;flex-direction:column;justify-content:center;padding:40px 40px 40px 12px}
+.mate.founder h3{font-size:clamp(26px,2.6vw,34px)}
+.mate.founder p{font-size:16px}
+
+/* ---------- contact ---------- */
+.c-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:start}
+.c-left .h2{font-size:clamp(40px,6vw,76px)}
+.c-left .lead{margin-top:22px}
+.c-btns{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.form{border:1px solid var(--line-2);border-radius:26px;padding:clamp(22px,3vw,34px);background:rgba(10,12,30,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:grid;gap:14px}
+.form label{display:block;font-size:13px;font-weight:600;color:var(--soft);margin-bottom:7px}
+.form input,.form select,.form textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:15px;outline:none;transition:border-color .3s;-webkit-appearance:none;appearance:none}
+.form textarea{min-height:110px;resize:vertical}
+.form select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(-45deg,transparent 50%,var(--muted) 50%);background-position:calc(100% - 22px) 52%,calc(100% - 17px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.form select option{background:#080916}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:rgba(0,229,255,.45)}
+.form .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form .btn{width:100%;margin-top:6px}
+.form small{color:var(--muted);font-size:12.5px;text-align:center}
+
+/* ---------- finale footer: the planet again ---------- */
+.finale{position:relative;height:100vh;height:100svh;min-height:620px;overflow:hidden;isolation:isolate;margin-top:clamp(40px,8vw,120px)}
+.finale::before{content:"";position:absolute;left:0;right:0;top:0;height:22%;background:linear-gradient(180deg,var(--bg),transparent);z-index:0;pointer-events:none}
+.f-top{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:clamp(110px,15vh,140px) var(--pad) 0;display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap}
+.f-top nav{display:flex;gap:6px 26px;flex-wrap:wrap;max-width:520px}
+.f-top nav a{font-size:15px;color:var(--soft);transition:color .3s}
+.f-top nav a:hover{color:var(--fg)}
+.f-contacts{display:flex;flex-direction:column;align-items:flex-end;gap:6px;font-size:15px}
+.f-contacts a{color:var(--soft);transition:color .3s}
+.f-contacts a:hover{color:var(--fg)}
+.f-word{position:absolute;z-index:1;left:50%;bottom:30%;transform:translateX(-50%);margin:0;font-weight:800;font-size:clamp(64px,17.5vw,300px);line-height:.8;letter-spacing:.01em;white-space:nowrap;color:transparent;background:linear-gradient(180deg,#ffffff 15%,rgba(214,220,255,.75) 55%,rgba(150,140,255,.08) 100%);-webkit-background-clip:text;background-clip:text;pointer-events:none;user-select:none}
+.f-bottom{position:absolute;z-index:2;left:0;right:0;bottom:clamp(18px,4vh,34px);max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;gap:16px;font-size:13.5px;color:rgba(198,201,223,.7);flex-wrap:wrap}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .hd nav{display:none}
+  .burger{display:block}
+  .hd .btn{display:none}
+  .princ{grid-template-columns:repeat(3,1fr);row-gap:30px}
+  .prow{grid-template-columns:84px 1fr auto}
+  .prow p{grid-column:2/-1;grid-row:2}
+  .prow .th{grid-row:span 2;width:84px;height:84px}
+  .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mate.founder{grid-column:span 2}
+}
+@media (max-width:899px){
+  .panel{position:relative;top:auto;grid-template-columns:1fr;height:auto;margin-bottom:18px}
+  .pvis{order:-1;height:320px}
+  .pvis::after{background:linear-gradient(0deg,#080918 0%,rgba(8,9,24,0) 24%)}
+  .ptx{padding:8px 24px 28px}
+  .ptx ul{margin-top:22px;padding-top:0}
+  .pvis .nums{padding:30px 26px}
+  .pvis .nums svg{left:0;width:100%;bottom:16%;height:38%}
+  .pvis .tg .a{left:8%}
+}
+@media (max-width:760px){
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr;gap:0}
+  .steps::before,.steps .fill{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto}
+  .steps .fill{height:calc(var(--p,0) * 100%);bottom:auto;width:1px;background:linear-gradient(180deg,var(--cyan),var(--violet),var(--pink))}
+  .step{display:grid;grid-template-columns:55px 1fr;column-gap:20px;padding-bottom:28px}
+  .step h3{margin:12px 0 4px}
+  .step p{grid-column:2}
+  .princ{grid-template-columns:1fr 1fr}
+  .prow{grid-template-columns:72px 1fr;gap:6px 16px}
+  .prow .th{width:72px;height:72px}
+  .prow .lk{grid-column:1/-1;margin-top:10px}
+  .prow p{grid-column:2}
+  .c-grid{grid-template-columns:1fr}
+  .form .row2{grid-template-columns:1fr}
+  .dirs{gap:10px 22px}
+  .arc{height:520px}
+  .team-grid{grid-template-columns:1fr}
+  .mate.founder{grid-column:auto;flex-direction:column}
+  .mate.founder .ph{flex:none;aspect-ratio:16/12}
+  .mate.founder .ph::after{inset:auto 0 0 0;width:auto;height:30%;background:linear-gradient(180deg,transparent,rgba(9,10,28,.9))}
+  .mate.founder .tx{padding:22px 24px 28px}
+  .mate .tx{padding:20px 24px 26px}
+  .ptx ul{grid-template-columns:1fr}
+  .f-contacts{align-items:flex-start}
+  .f-word{bottom:34%}
+  .nums .row{flex-direction:column;gap:14px}
+  .nums svg{bottom:140px;height:36%}
+}
+@media (prefers-reduced-motion:reduce){
+  [data-r],.hero .fade,.hero h1 span b{transition:none!important;opacity:1!important;transform:none!important}
+  .phone,.tg .shot,.orb .ring,.orb .t{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="space" aria-hidden="true">
+  <div class="neb n1"></div><div class="neb n2"></div><div class="neb n3"></div>
+  <canvas id="sky"></canvas>
+</div>
+
+<header class="hd" id="hd">
+  <div class="hd-in">
+    <a class="logo" href="#top" data-go><img src="assets/logo.png" alt="">CYNEZIS</a>
+    <nav>
+      <a href="#directions" data-go>Услуги</a>
+      <a href="#about" data-go>О нас</a>
+      <a href="#process" data-go>Процесс</a>
+      <a href="#work" data-go>Проекты</a>
+      <a href="#team" data-go>Команда</a>
+      <a href="#contact" data-go>Контакты</a>
+    </nav>
+    <a class="btn btn-main" href="#contact" data-go>Обсудить проект</a>
+    <button class="burger" id="burger" aria-label="Меню"><i></i><i></i></button>
+  </div>
+</header>
+<div class="mnav" id="mnav">
+  <a href="#directions" data-go>Услуги</a>
+  <a href="#about" data-go>О нас</a>
+  <a href="#process" data-go>Процесс</a>
+  <a href="#work" data-go>Проекты</a>
+  <a href="#team" data-go>Команда</a>
+  <a href="#contact" data-go>Контакты</a>
+  <a class="btn btn-main" href="#contact" data-go>Обсудить проект</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="gl" id="gl" aria-hidden="true"></canvas>
+    <div class="hero-in">
+      <h1><span><b>Объединяем идеи.</b></span><span><b><em>Создаём будущее.</em></b></span></h1>
+      <p class="fade f2">Digital-агентство полного цикла. Разрабатываем приложения, Telegram-боты и сайты, автоматизируем процессы и приводим клиентов. От смелой идеи — до работающей системы.</p>
+      <div class="acts fade f3">
+        <a class="btn btn-main" href="#contact" data-go>Обсудить проект</a>
+        <a class="btn btn-ghost" href="#directions" data-go>Наши возможности</a>
+      </div>
+    </div>
+    <div class="dirs fade f4">
+      <span>Разработка</span><span>Digital-маркетинг</span><span>Telegram</span><span>Дизайн</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap">
+      <div class="stat" data-r style="--d:0"><b data-count="29">0</b><span>проектов в портфолио команды</span></div>
+      <div class="stat" data-r style="--d:1"><b>$<span data-count="600" style="display:inline;margin:0;color:inherit;font:inherit">0</span>K</b><span>управляемого рекламного бюджета</span></div>
+      <div class="stat" data-r style="--d:2"><b><span data-count="6" style="display:inline;margin:0;color:inherit;font:inherit">0</span><sup>+</sup></b><span>лет в мобильной разработке</span></div>
+      <div class="stat" data-r style="--d:3"><b><span data-count="5" style="display:inline;margin:0;color:inherit;font:inherit">0</span></b><span>специалистов — полный цикл в одной команде</span></div>
+    </div>
+  </section>
+
+  <!-- DIRECTIONS -->
+  <section class="sec" id="directions">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2" data-r>Технологии для вашего роста</h2>
+        <p class="lead" data-r style="--d:1">Объединяем разработку, технологии и интернет-маркетинг в решения, созданные под задачи бизнеса.</p>
+      </div>
+      <div class="stack" id="stack">
+        <article class="panel" id="dir-dev" style="--i:0">
+          <div class="ptx">
+            <h3>Разработка и технологии</h3>
+            <p>Сайты, платформы, мобильные приложения, AI и интеграции.</p>
+              <ul><li>Сайты на чистом коде</li><li>Веб-платформы и кабинеты</li><li>iOS и Android</li><li>Telegram-боты и Mini Apps</li><li>AI и автоматизация</li><li>API и платёжные системы</li></ul>
+          </div>
+          <div class="pvis scene s-dev">
+              <div class="glow"></div>
+              <div class="phones">
+                <div class="phone p1"><img src="assets/work/contractly.webp" alt="Contractly AI" loading="lazy"></div>
+                <div class="phone p2"><img src="assets/work/chaparpay.webp" alt="ChaparPay" loading="lazy"></div>
+                <div class="phone p3"><img src="assets/work/evently.webp" alt="Evently UAE" loading="lazy"></div>
+              </div>
+            </div>
+          <i class="shade" aria-hidden="true"></i>
+        </article>
+        <article class="panel" id="dir-growth" style="--i:1">
+          <div class="ptx">
+            <h3>Digital-маркетинг</h3>
+            <p>Считаем рекламу в заявках, а не в показах: 500+ заявок для недвижимости в Дубае, 100+ — для B2B-производителя.</p>
+              <ul><li>SEO-продвижение</li><li>Google Ads и Яндекс Директ</li><li>Медийная реклама</li><li>Реклама на YouTube</li><li>Google и Яндекс Карты</li><li>Продвижение приложений</li></ul>
+          </div>
+          <div class="pvis scene s-growth">
+              <div class="glow"></div>
+              <div class="nums">
+                <div class="big" data-n="8000">8 000+</div>
+                <div class="big-l">конверсий в Google Ads для автопроката в Казахстане</div>
+                <svg viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+  <linearGradient id="chartLine" x1="0" x2="1"><stop offset="0" stop-color="#00e5ff"/><stop offset=".55" stop-color="#8a7aff"/><stop offset="1" stop-color="#f06aff"/></linearGradient>
+  <linearGradient id="chartArea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8a7aff" stop-opacity=".6"/><stop offset="1" stop-color="#8a7aff" stop-opacity="0"/></linearGradient>
+</defs>
+                  <path class="ar" d="M0 240 C60 236 90 226 140 214 S230 200 280 170 S370 140 420 104 S520 50 600 18 L600 260 L0 260Z"/>
+                  <path class="ln" d="M0 240 C60 236 90 226 140 214 S230 200 280 170 S370 140 420 104 S520 50 600 18"/>
+                </svg>
+              </div>
+            </div>
+          <i class="shade" aria-hidden="true"></i>
+        </article>
+        <article class="panel" id="dir-tg" style="--i:2">
+          <div class="ptx">
+            <h3>Telegram-маркетинг</h3>
+            <p>Боты, Mini Apps и продвижение внутри Telegram — там, где уже живёт ваша аудитория.</p>
+              <ul><li>Продвижение каналов и ботов</li><li>Привлечение подписчиков</li><li>Реклама в сообществах</li><li>Invite-продвижение</li><li>Автопубликации</li><li>Удержание аудитории</li></ul>
+          </div>
+          <div class="pvis scene s-tg">
+              <div class="glow"></div>
+              <div class="tg">
+                <div class="shot a"><img src="assets/work/biznesliga.webp" alt="Бизнес Лига" loading="lazy"></div>
+                <div class="shot b"><img src="assets/work/dubaielite.webp" alt="Dubai Elite" loading="lazy"></div>
+              </div>
+            </div>
+          <i class="shade" aria-hidden="true"></i>
+        </article>
+        <article class="panel" id="dir-all" style="--i:3">
+          <div class="ptx">
+            <h3>Проекты под ключ</h3>
+            <p>От идеи и проектирования до запуска и роста — одной командой, без передачи между подрядчиками.</p>
+              <ul><li>Анализ задачи</li><li>Дизайн и айдентика</li><li>Разработка</li><li>Запуск</li><li>Аналитика</li><li>Развитие продукта</li></ul>
+          </div>
+          <div class="pvis scene s-all">
+              <div class="glow"></div>
+              <div class="orb">
+                <div class="ring r2">
+                  <div class="t" style="left:50%;top:0;margin:-8.5% 0 0 -8.5%"><img src="assets/work/biznesliga.webp" alt="" loading="lazy"></div>
+                  <div class="t" style="left:93%;top:75%;margin:-8.5% 0 0 -8.5%"><img src="assets/work/embraya.webp" alt="" loading="lazy"></div>
+                  <div class="t" style="left:7%;top:75%;margin:-8.5% 0 0 -8.5%"><img src="assets/work/dubaielite.webp" alt="" loading="lazy"></div>
+                </div>
+                <div class="ring r1">
+                  <div class="t" style="left:50%;top:100%;margin:-15% 0 0 -15%"><img src="assets/work/chaparpay.webp" alt="" loading="lazy"></div>
+                  <div class="t" style="left:6%;top:28%;margin:-15% 0 0 -15%"><img src="assets/work/contractly.webp" alt="" loading="lazy"></div>
+                  <div class="t" style="left:94%;top:28%;margin:-15% 0 0 -15%"><img src="assets/work/evently.webp" alt="" loading="lazy"></div>
+                </div>
+                <div class="core"><img src="assets/logo.png" alt=""></div>
+              </div>
+            </div>
+          <i class="shade" aria-hidden="true"></i>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec about" id="about">
+    <div class="wrap">
+      <p class="big" id="bigtext">Одна команда. Полный цикл. Помогаем предпринимателям и компаниям запускать цифровые продукты, автоматизировать процессы и находить новых клиентов. Вместо разрозненных подрядчиков — команда, объединённая общей целью и ответственностью за результат.</p>
+      <div class="princ">
+        <div data-r><b>Комплексный подход</b><span>Разработка и продвижение в одной команде.</span></div>
+        <div data-r style="--d:1"><b>Индивидуальные решения</b><span>Под конкретные задачи бизнеса.</span></div>
+        <div data-r style="--d:2"><b>Современные технологии</b><span>AI и автоматизация для эффективности.</span></div>
+        <div data-r style="--d:3"><b>Гибкость</b><span>От отдельных задач до больших проектов.</span></div>
+        <div data-r style="--d:4"><b>Масштабируемость</b><span>Решения с потенциалом развития.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="sec" id="process" style="padding-top:40px">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2" data-r>От идеи до запуска</h2>
+        <p class="lead" data-r style="--d:1">Прозрачный процесс, понятные этапы и внимание к задачам бизнеса.</p>
+      </div>
+      <div class="steps" id="steps">
+        <div class="fill"></div>
+        <div class="step"><div class="dot">1</div><h3>Знакомство</h3><p>Обсуждаем цели и задачу.</p></div>
+        <div class="step"><div class="dot">2</div><h3>Аналитика</h3><p>Формируем план и требования.</p></div>
+        <div class="step"><div class="dot">3</div><h3>Реализация</h3><p>Проектируем и разрабатываем.</p></div>
+        <div class="step"><div class="dot">4</div><h3>Запуск</h3><p>Тестируем и внедряем.</p></div>
+        <div class="step"><div class="dot">5</div><h3>Развитие</h3><p>Анализируем и улучшаем.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="sec work" id="work">
+    <div class="wrap">
+      <div class="arc" id="arc">
+        <div class="arc-glow"></div>
+        <div class="arc-clip"><div class="arc-ring" id="ring"></div></div>
+        <div class="arc-mid">
+          <h2 class="h2" data-r>Идеи, которые стали реальностью</h2>
+          <p class="lead" data-r style="--d:1">29 проектов в портфолио команды: разработка, маркетинг и дизайн.</p>
+          <a class="btn btn-ghost" data-r style="--d:2" href="https://cynezis.com/portfolio" target="_blank" rel="noopener">Смотреть портфолио</a>
+        </div>
+      </div>
+
+      <div class="plist">
+        <div class="prow" data-r>
+          <div class="th"><img src="assets/work/chaparpay.webp" alt="ChaparPay" loading="lazy"></div>
+          <h3>ChaparPay<small>Финтех, Туркменистан</small></h3>
+          <p>Платежи, коммунальные услуги, билеты, штрафы и отслеживание отправлений в одном приложении. Роль — ведущий разработчик.</p>
+          <div class="lk"><a href="https://apps.apple.com/tm/app/%C3%A7aparpay/id1564491971" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=tm.gov.turkmenpost.caparpay" target="_blank" rel="noopener">Google Play</a></div>
+        </div>
+        <div class="prow" data-r>
+          <div class="th"><img src="assets/work/contractly.webp" alt="Contractly AI" loading="lazy"></div>
+          <h3>Contractly AI<small>AI-сервис, ОАЭ</small></h3>
+          <p>Анализ договоров из PDF, фото и сканов: суть, ключевые положения и риски. Английский и арабский. Разработка с нуля.</p>
+          <div class="lk"><a href="https://apps.apple.com/ae/app/contractly-ai/id6762138259" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.contractly.dev" target="_blank" rel="noopener">Google Play</a></div>
+        </div>
+        <div class="prow" data-r>
+          <div class="th"><img src="assets/work/evently.webp" alt="Evently UAE" loading="lazy"></div>
+          <h3>Evently UAE<small>Сервис событий, ОАЭ</small></h3>
+          <p>Объявления и события в ОАЭ: категории, районы, публикации и билеты. Три языка. Разработка с нуля.</p>
+          <div class="lk"><a href="https://apps.apple.com/ae/app/evently-uae/id6766049764" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.eventlyuae.app" target="_blank" rel="noopener">Google Play</a></div>
+        </div>
+        <div class="prow" data-r>
+          <div class="th"><img src="assets/work/embraya.webp" alt="Embraya" loading="lazy"></div>
+          <h3>Embraya<small>HealthTech</small></h3>
+          <p>Цифровой помощник в лечении бесплодия: лекарства, цикл, визиты и дневник симптомов.</p>
+          <div class="lk"><a href="https://apps.apple.com/ae/app/embraya-ivf-tracker/id6753602848" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.embraya.app" target="_blank" rel="noopener">Google Play</a></div>
+        </div>
+        <div class="prow" data-r>
+          <div class="th"><img src="assets/work/biznesliga.webp" alt="Бизнес Лига" loading="lazy"></div>
+          <h3>Бизнес Лига<small>Telegram-бот</small></h3>
+          <p>Telegram-платформа для рекламы: биржа каналов, рассылки, личный кабинет, рефералы и AI-инструменты.</p>
+          <div class="lk"><a href="https://cynezis.com/portfolio" target="_blank" rel="noopener">Кейс</a></div>
+        </div>
+        <div class="prow" data-r>
+          <div class="th"><img src="assets/work/dubaielite.webp" alt="Dubai Elite" loading="lazy"></div>
+          <h3>Dubai Elite<small>Бот и Mini App, ОАЭ</small></h3>
+          <p>Цифровая экосистема для рынка недвижимости ОАЭ: бот, Mini App и инструменты для участников рынка.</p>
+          <div class="lk"><a href="https://cynezis.com/portfolio" target="_blank" rel="noopener">Кейс</a></div>
+        </div>
+      </div>
+      <p class="note">Проекты из профессионального опыта участников команды, в том числе реализованные до присоединения к CYNEZIS.</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="sec" id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2" data-r>Люди, которые создают будущее</h2>
+        <p class="lead" data-r style="--d:1">За каждой технологией стоит человек. За каждым проектом — команда.</p>
+      </div>
+      <div class="team-grid">
+        <article class="mate founder" data-r>
+          <div class="ph"><img src="assets/team/alex.webp" alt="Алексей Виноградов" loading="lazy"></div>
+          <div class="tx"><h3>Алексей Виноградов</h3><span class="role">Основатель CYNEZIS</span><p>Предприниматель с технологическим мышлением и стремлением выходить за рамки привычного. Видит возможности там, где другие замечают ограничения. Верит, что самые интересные проекты начинаются со смелой идеи и решимости воплотить её в жизнь.</p></div>
+        </article>
+        <article class="mate" data-r style="--d:1">
+          <div class="ph"><img src="assets/team/daria.webp" alt="Дария Виноградова" loading="lazy"></div>
+          <div class="tx"><h3>Дария Виноградова</h3><span class="role">Арт-директор, иллюстратор</span><p>Не признаёт шаблонов ради шаблонов. Любит смелые идеи, нестандартные сочетания и визуал с характером. В CYNEZIS отвечает за художественное направление и помогает проектам обрести собственную индивидуальность.</p></div>
+        </article>
+        <article class="mate" data-r>
+          <div class="ph"><img src="assets/team/max.webp" alt="Максим Королёв" loading="lazy"></div>
+          <div class="tx"><h3>Максим Королёв</h3><span class="role">Software Developer, Telegram Mini Apps</span><p>4 года в программировании. Специализируется на Telegram Mini Apps, программной логике и интеграции сервисов. Превращает сложные технические задачи в продуманные цифровые решения.</p></div>
+        </article>
+        <article class="mate" data-r style="--d:1">
+          <div class="ph"><img src="assets/team/nail.webp" alt="Наиль Суконкулов" loading="lazy"></div>
+          <div class="tx"><h3>Наиль Суконкулов</h3><span class="role">Performance-маркетолог, Google Partner</span><p>В digital-маркетинге с 2019 года. Более 50 рекламных кампаний и $600 000 управляемого бюджета. Для него эффективный маркетинг — это не количество кликов, а измеримый результат.</p></div>
+        </article>
+        <article class="mate" data-r style="--d:2">
+          <div class="ph"><img src="assets/team/jelil.webp" alt="Джелил Туваков" loading="lazy"></div>
+          <div class="tx"><h3>Джелил Туваков</h3><span class="role">Senior Flutter Developer, iOS и Android</span><p>Более 6 лет в мобильной разработке. Приложения для iOS и Android с аудиторией в сотни тысяч пользователей: мобильная архитектура, финтех, платёжные системы и API.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact" style="padding-bottom:0">
+    <div class="wrap c-grid">
+      <div class="c-left">
+        <h2 class="h2" data-r>Есть идея?<br>Давайте воплотим.</h2>
+        <p class="lead" data-r style="--d:1">Расскажите о задаче. Обсудим возможности, подход и следующие шаги.</p>
+        <div class="c-btns" data-r style="--d:2">
+          <a class="btn btn-main" href="https://t.me/Alex_gentlemen" target="_blank" rel="noopener">Написать в Telegram</a>
+          <a class="btn btn-ghost" href="https://wa.me/79001113088" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <form class="form" id="form" data-r style="--d:2">
+        <div class="row2">
+          <div><label for="f-name">Ваше имя</label><input id="f-name" required placeholder="Как к вам обращаться"></div>
+          <div><label for="f-contact">Контакт для связи</label><input id="f-contact" required placeholder="@telegram или телефон"></div>
+        </div>
+        <div><label for="f-svc">Интересующая услуга</label>
+          <select id="f-svc"><option>Разработка и технологии</option><option>Digital-маркетинг</option><option>Telegram-маркетинг</option><option>Проекты под ключ</option><option>Другое</option></select></div>
+        <div><label for="f-msg">Расскажите о проекте</label><textarea id="f-msg" placeholder="Что хотите запустить?"></textarea></div>
+        <button class="btn btn-main" type="submit">Отправить заявку</button>
+        <small>Заявка откроется в Telegram — сообщение уже будет заполнено.</small>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- FINALE FOOTER -->
+<footer class="finale" id="finale">
+  <canvas class="gl" id="gl2" aria-hidden="true"></canvas>
+  <div class="f-top">
+    <nav aria-label="Разделы">
+      <a href="#directions" data-go>Услуги</a><a href="#about" data-go>О нас</a><a href="#process" data-go>Процесс</a><a href="#work" data-go>Проекты</a><a href="#team" data-go>Команда</a><a href="#contact" data-go>Контакты</a>
+    </nav>
+    <div class="f-contacts">
+      <a href="https://t.me/Alex_gentlemen" target="_blank" rel="noopener">Telegram @Alex_gentlemen</a>
+      <a href="https://wa.me/79001113088" target="_blank" rel="noopener">WhatsApp +7 900 111-30-88</a>
+    </div>
+  </div>
+  <p class="f-word" aria-hidden="true">CYNEZIS</p>
+  <div class="f-bottom"><span>Концепт редизайна сайта CYNEZIS</span><span>© 2026 CYNEZIS</span></div>
+</footer>
+
+<script>
+/* ---------- page: smooth scroll, reveals, counters, scroll-linked bits ---------- */
+(() => {
+  const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lenis = null;
+  if (!REDUCE && window.Lenis) {
+    lenis = new Lenis({lerp: .085, smoothWheel: true});
+    const raf = t => { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+  }
+  const hd = document.getElementById('hd');
+  document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href'); if (!id || id[0] !== '#') return;
+    e.preventDefault();
+    document.body.classList.remove('menu-open');
+    const el = id === '#top' ? 0 : document.querySelector(id);
+    if (lenis) lenis.scrollTo(el, {offset: id === '#top' ? 0 : -70, duration: 1.4});
+    else (el === 0 ? scrollTo({top: 0, behavior: 'smooth'}) : el.scrollIntoView({behavior: 'smooth'}));
+  }));
+  document.getElementById('burger').onclick = () => document.body.classList.toggle('menu-open');
+  requestAnimationFrame(() => setTimeout(() => document.getElementById('hero').classList.add('on'), 120));
+
+  const fmt = n => n.toLocaleString('ru-RU').replace(/ /g, ' ');
+  const count = (el, sfx = el.dataset.sfx || '') => {
+    const to = +(el.dataset.count || el.dataset.n);
+    if (REDUCE) { el.textContent = fmt(to) + sfx; return; }
+    const t0 = performance.now(), D = 1600;
+    const tick = t => { const p = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - p, 4); el.textContent = fmt(Math.round(to * e)) + sfx; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const t = e.target; t.classList.add('in'); io.unobserve(t);
+    t.querySelectorAll('[data-count]').forEach(el => count(el));
+    if (t.matches('[data-count]')) count(t);
+  }), {rootMargin: '0px 0px -12% 0px'});
+  document.querySelectorAll('[data-r]').forEach(el => io.observe(el));
+
+  /* directions: scenes start when their panel comes into view */
+  const panels = [...document.querySelectorAll('.panel')];
+  const sio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const sc = e.target.querySelector('.scene'); sc.classList.add('on'); sio.unobserve(e.target);
+    const n = sc.querySelector('.big[data-n]'); if (n) setTimeout(() => count(n, '+'), 250);
+    const ln = sc.querySelector('path.ln'); if (ln) drawChart(ln, sc.querySelector('path.ar'));
+  }), {threshold: .4});
+  /* chart line drawn with attributes (CSS transitions on SVG strokes don't repaint reliably under masks) */
+  function drawChart(ln, ar) {
+    const L = ln.getTotalLength();
+    ln.setAttribute('stroke-dasharray', L);
+    const t0 = performance.now(), D = REDUCE ? 1 : 2200;
+    const step = t => {
+      const p = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - p, 3);
+      ln.setAttribute('stroke-dashoffset', (L * (1 - e)).toFixed(1));
+      ar.setAttribute('opacity', Math.max(0, (e - .35) / .65).toFixed(3));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    ln.setAttribute('stroke-dashoffset', L); ar.setAttribute('opacity', 0);
+    requestAnimationFrame(step);
+  }
+  panels.forEach(c => sio.observe(c));
+  function deck() {
+    if (innerWidth < 900) { panels.forEach(p => { p.style.transform = ''; p.querySelector('.shade').style.opacity = 0; }); return; }
+    panels.forEach((p, i) => {
+      const next = panels[i + 1];
+      let k = 0;
+      if (next) { const stick = 100 + i * 18, h = p.offsetHeight; k = Math.min(1, Math.max(0, 1 - (next.getBoundingClientRect().top - stick) / h)); }
+      p.style.transform = REDUCE ? '' : `scale(${(1 - k * .05).toFixed(4)})`;
+      p.querySelector('.shade').style.opacity = (k * .55).toFixed(3);
+    });
+  }
+
+  /* about words */
+  const big = document.getElementById('bigtext');
+  big.innerHTML = big.textContent.trim().split(/\s+/).map((w, i) => `<span class="w${i < 4 ? ' acc' : ''}">${w}</span>`).join(' ');
+  const words = [...big.querySelectorAll('.w')];
+
+  /* portfolio arc */
+  const ring = document.getElementById('ring'), arc = document.getElementById('arc');
+  const IMGS = ['chaparpay', 'biznesliga', 'contractly', 'dubaielite', 'evently', 'embraya'];
+  const N = 14, items = [];
+  for (let i = 0; i < N; i++) {
+    const d = document.createElement('div'); d.className = 'it';
+    const im = new Image(); im.src = `assets/work/${IMGS[i % IMGS.length]}.webp`; im.alt = ''; im.loading = 'lazy';
+    d.append(im); ring.append(d); items.push(d);
+  }
+  function layoutArc() {
+    const W = arc.clientWidth, H = arc.clientHeight, narrow = W < 700;
+    const s = narrow ? 50 : Math.min(130, Math.max(96, W * .095));
+    const R = narrow ? W * .64 : Math.min(W * .52, 640);
+    const cy = 40 + H * (narrow ? .5 : 1.02);
+    const ar = arc.getBoundingClientRect();
+    const prog = (innerHeight - ar.top) / (innerHeight + ar.height);
+    const rot = REDUCE ? 0 : (prog - .5) * 0.9;
+    const span = narrow ? 2.1 : 2.4;
+    ring.style.top = cy + 'px';
+    items.forEach((it, i) => {
+      const a = -Math.PI / 2 + (i / (N - 1) - .5) * span * 1.35 + rot;
+      const edge = Math.abs(Math.cos(a));
+      it.style.setProperty('--s', s + 'px');
+      it.style.transform = `translate(${Math.cos(a) * R}px, ${Math.sin(a) * R}px) rotate(${(a + Math.PI / 2) * 57.3 * .55}deg)`;
+      it.style.opacity = (1 - Math.max(0, edge - .6) * 2.2).toFixed(2);
+    });
+  }
+
+  const steps = document.getElementById('steps'), stepEls = [...steps.querySelectorAll('.step')];
+  let last = -1;
+  function frame() {
+    const y = scrollY, vh = innerHeight;
+    if (y !== last) {
+      last = y;
+      hd.classList.toggle('solid', y > 40);
+      deck();
+      const br = big.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (vh * .85 - br.top) / (br.height + vh * .35)));
+      const k = Math.round(p * words.length);
+      words.forEach((w, i) => w.classList.toggle('on', i < k || REDUCE));
+      const sr = steps.getBoundingClientRect();
+      const sp = Math.min(1, Math.max(0, (vh * .8 - sr.top) / (sr.height + vh * .3)));
+      steps.style.setProperty('--p', REDUCE ? 1 : sp);
+      stepEls.forEach((s, i) => s.classList.toggle('on', REDUCE || sp >= (i / (stepEls.length - 1)) * .96 + .01));
+      layoutArc();
+    }
+    requestAnimationFrame(frame);
+  }
+  addEventListener('resize', () => { last = -1; });
+  frame();
+
+  document.getElementById('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const text = `Здравствуйте! Заявка с сайта CYNEZIS.\n\nИмя: ${v('f-name')}\nКонтакт: ${v('f-contact')}\nУслуга: ${v('f-svc')}\n\n${v('f-msg')}`;
+    window.open('https://t.me/Alex_gentlemen?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+})();
+
+/* ---------- living space: stars, nebulae and faint orbits behind every screen ---------- */
+(() => {
+  const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cv = document.getElementById('sky'), ctx = cv.getContext('2d');
+  const nebs = [...document.querySelectorAll('.neb')];
+  let W, H, dpr, stars = [];
+  const COLS = [[0, 229, 255], [138, 122, 255], [240, 106, 255]];
+  function resize() {
+    dpr = Math.min(devicePixelRatio || 1, 1.5);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(W * H / 1700);
+    stars = Array.from({length: n}, () => ({x: Math.random() * W, y: Math.random() * H * 3, z: .15 + Math.random() * .85, r: Math.random() < .06 ? 1.4 : .7, ph: Math.random() * 6.28}));
+  }
+  resize(); addEventListener('resize', resize);
+  const orbits = [
+    {cx: .2, cy: .35, rx: 1.05, ry: .28, rot: -.22, col: 0, sp: .018},
+    {cx: .85, cy: .7, rx: .95, ry: .24, rot: .16, col: 1, sp: -.014},
+    {cx: .5, cy: 1.05, rx: 1.3, ry: .34, rot: -.06, col: 2, sp: .011},
+  ];
+  let t = 0, prev = performance.now();
+  function draw(now) {
+    requestAnimationFrame(draw);
+    const dt = Math.min(.05, (now - prev) / 1000); prev = now;
+    const sy = scrollY;
+    if (sy < innerHeight * .6) return; // the hero has its own sky
+    if (!REDUCE) t += dt;
+    ctx.clearRect(0, 0, W, H);
+    for (const s of stars) {
+      let y = (s.y - sy * s.z * .25) % (H * 3); if (y < 0) y += H * 3;
+      if (y > H) continue;
+      const a = (.25 + .55 * s.z) * (.6 + .4 * Math.sin(t * 1.3 + s.ph));
+      ctx.fillStyle = `rgba(200,210,255,${a.toFixed(3)})`;
+      ctx.fillRect(s.x, y, s.r, s.r);
+    }
+    const sp = sy / Math.max(1, document.body.scrollHeight - H);
+    orbits.forEach((o, i) => {
+      const cx = W * o.cx, cy = H * (o.cy + Math.sin(sp * 6.28 + i * 2) * .18);
+      const rx = W * o.rx, ry = W * o.ry, rot = o.rot + sp * .6 * (i % 2 ? -1 : 1);
+      const [r, g, b] = COLS[o.col];
+      ctx.save(); ctx.translate(cx, cy); ctx.rotate(rot);
+      ctx.strokeStyle = `rgba(${r},${g},${b},.085)`; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2); ctx.stroke();
+      const head = t * o.sp * 6.28 + i * 2.1;
+      for (let k = 0; k < 26; k++) {
+        const a = head - k * .012 * Math.sign(o.sp);
+        const al = (1 - k / 26) * .8;
+        ctx.fillStyle = `rgba(${r},${g},${b},${al.toFixed(3)})`;
+        ctx.beginPath(); ctx.arc(Math.cos(a) * rx, Math.sin(a) * ry, k === 0 ? 2.6 : 1.6 * (1 - k / 26) + .4, 0, 6.28); ctx.fill();
+      }
+      ctx.restore();
+    });
+    nebs.forEach((n, i) => {
+      const x = Math.sin(sp * 5 + i * 2.2) * 18, y = Math.cos(sp * 4 + i * 1.7) * 26 - sp * (40 + i * 30);
+      n.style.transform = `translate3d(${x}vw, ${y}vh, 0)`;
+    });
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+
+<script type="module">
+/* ---------- planet horizon with orbital rings (hero and finale) ---------- */
+import * as THREE from 'three';
+
+const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const CYAN = new THREE.Color('#00e5ff'), VIOLET = new THREE.Color('#8a7aff'), PINK = new THREE.Color('#f06aff');
+const R = 26;
+const mouse = {x: 0, y: 0, tx: 0, ty: 0};
+addEventListener('pointermove', e => { mouse.tx = e.clientX / innerWidth - .5; mouse.ty = e.clientY / innerHeight - .5; }, {passive: true});
+
+const palette = /* glsl */`
+uniform vec3 uC1, uC2, uC3;
+vec3 pal(float t){ t = clamp(t, 0., 1.); return t < .5 ? mix(uC1, uC2, t * 2.) : mix(uC2, uC3, (t - .5) * 2.); }`;
+
+function planetScene(canvas, host, cfg) {
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({canvas, antialias: true, powerPreference: 'high-performance'}); }
+  catch (e) { canvas.remove(); return null; }
+  renderer.setClearColor(0x050610, 1);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(26, 1, .1, 600);
+  const U = {uC1: {value: CYAN}, uC2: {value: VIOLET}, uC3: {value: PINK}, uTime: {value: 0}};
+  const world = new THREE.Group();
+  scene.add(world);
+
+  world.add(new THREE.Mesh(new THREE.SphereGeometry(R, 160, 120), new THREE.ShaderMaterial({
+    uniforms: U,
+    vertexShader: /* glsl */`
+      varying vec3 vN; varying vec3 vW; varying vec3 vL;
+      void main(){ vL = position / ${R.toFixed(1)}; vec4 w = modelMatrix * vec4(position, 1.); vW = w.xyz; vN = normalize(mat3(modelMatrix) * normal); gl_Position = projectionMatrix * viewMatrix * w; }`,
+    fragmentShader: /* glsl */`
+      ${palette}
+      uniform float uTime;
+      varying vec3 vN; varying vec3 vW; varying vec3 vL;
+      float hash(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }
+      void main(){
+        vec3 V = normalize(cameraPosition - vW);
+        float f = 1. - max(dot(normalize(vN), V), 0.);
+        float rim = pow(f, 4.5);
+        vec3 rc = pal(clamp(vW.x / 34. + .5, 0., 1.));
+        float ang = uTime * .02;
+        vec3 p = vec3(cos(ang) * vL.x - sin(ang) * vL.z, vL.y, sin(ang) * vL.x + cos(ang) * vL.z);
+        float lon = atan(p.z, p.x), lat = asin(clamp(p.y, -1., 1.));
+        vec2 g = vec2(lon * 60., lat * 60.);
+        vec2 id = floor(g); vec2 c = fract(g) - .5;
+        float dots = smoothstep(.2, .05, length(c)) * step(.55, hash(id));
+        float top = smoothstep(.0, .6, normalize(vN).y);
+        vec3 col = vec3(.008, .01, .03);
+        col += rc * dots * .22 * top * (.35 + .65 * f);
+        col += rc * rim * 1.15;
+        col += vec3(1.) * pow(f, 14.) * .9;
+        gl_FragColor = vec4(col, 1.);
+      }`,
+  })));
+
+  world.add(new THREE.Mesh(new THREE.SphereGeometry(R * 1.065, 128, 96), new THREE.ShaderMaterial({
+    uniforms: U, side: THREE.BackSide, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader: `varying vec3 vNV; varying vec3 vW; void main(){ vNV = normalize(normalMatrix * normal); vec4 w = modelMatrix * vec4(position,1.); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
+    fragmentShader: /* glsl */`
+      ${palette}
+      varying vec3 vNV; varying vec3 vW;
+      void main(){ float i = smoothstep(0., .34, -vNV.z); i = pow(i, 2.6) * .62; gl_FragColor = vec4(pal(clamp(vW.x / 40. + .5, 0., 1.)) * i, 1.); }`,
+  })));
+
+  const bloom = new THREE.Mesh(new THREE.PlaneGeometry(150, 70), new THREE.ShaderMaterial({
+    uniforms: U, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.); }`,
+    fragmentShader: /* glsl */`
+      ${palette}
+      varying vec2 vUv;
+      void main(){ vec2 q = (vUv - vec2(.5, .3)) * vec2(1., 2.4); float i = exp(-dot(q, q) * 7.) * .3 + exp(-dot(q, q) * 30.) * .2; gl_FragColor = vec4(pal(vUv.x * 1.2 - .1) * i, 1.); }`,
+  }));
+  bloom.position.set(0, -3, -24);
+  scene.add(bloom);
+
+  const rings = [];
+  cfg.rings.forEach(d => {
+    const n = d.n, g = new THREE.BufferGeometry();
+    const a = new Float32Array(n), off = new Float32Array(n), hh = new Float32Array(n), s = new Float32Array(n);
+    for (let i = 0; i < n; i++) {
+      a[i] = Math.random() * Math.PI * 2;
+      off[i] = (Math.random() + Math.random() + Math.random() - 1.5) / 1.5 * d.width;
+      hh[i] = (Math.random() - .5) * d.width * .25;
+      s[i] = Math.random() < .015 ? 3.2 + Math.random() * 2 : .6 + Math.random() * .9;
+    }
+    g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+    g.setAttribute('aA', new THREE.BufferAttribute(a, 1));
+    g.setAttribute('aOff', new THREE.BufferAttribute(off, 1));
+    g.setAttribute('aH', new THREE.BufferAttribute(hh, 1));
+    g.setAttribute('aS', new THREE.BufferAttribute(s, 1));
+    g.boundingSphere = new THREE.Sphere(new THREE.Vector3(), d.r * 2);
+    const m = new THREE.ShaderMaterial({
+      transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+      uniforms: {uTime: U.uTime, uR: {value: d.r}, uSpeed: {value: d.speed}, uSize: {value: d.size}, uColor: {value: d.color}, uPx: {value: 1}, uPhase: {value: d.phase}, uMask: {value: new THREE.Vector3(cfg.mask[0], cfg.mask[1], cfg.mask[2])}},
+      vertexShader: /* glsl */`
+        attribute float aA, aOff, aH, aS;
+        uniform float uTime, uR, uSpeed, uSize, uPx, uPhase;
+        uniform vec3 uMask;
+        varying float vA; varying float vBright;
+        void main(){
+          float ang = aA + uTime * uSpeed * (1. + aOff * .01);
+          float rr = uR + aOff;
+          vec4 mv = modelViewMatrix * vec4(cos(ang) * rr, aH, sin(ang) * rr, 1.);
+          gl_Position = projectionMatrix * mv;
+          float wave = .5 + .5 * sin(ang * 2. - uTime * .6 + uPhase);
+          vBright = .35 + .9 * pow(wave, 6.);
+          vec2 ndc = gl_Position.xy / gl_Position.w;
+          float m = smoothstep(.5, 1.05, length((ndc - uMask.xy) * vec2(1.55, 2.1)));
+          vBright *= mix(1., .18 + .82 * m, uMask.z);
+          gl_PointSize = uSize * aS * uPx * (160. / -mv.z) * (.8 + .6 * vBright);
+          vA = aS > 3. ? 1. : .55;
+        }`,
+      fragmentShader: /* glsl */`
+        uniform vec3 uColor;
+        varying float vA; varying float vBright;
+        void main(){ float a = smoothstep(.5, .0, length(gl_PointCoord - .5)); a *= a; gl_FragColor = vec4(mix(uColor, vec3(1.), a * .35 * vBright) * a * vA * vBright, 1.); }`,
+    });
+    const holder = new THREE.Group();
+    holder.rotation.set(d.tiltX, 0, d.tiltZ);
+    holder.add(new THREE.Points(g, m));
+    const pts = new THREE.EllipseCurve(0, 0, d.r, d.r, 0, Math.PI * 2).getPoints(400).map(p => new THREE.Vector3(p.x, 0, p.y));
+    holder.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({color: d.color, transparent: true, opacity: .16, blending: THREE.AdditiveBlending, depthWrite: false})));
+    world.add(holder);
+    rings.push({holder, m, dir: d.speed > 0 ? 1 : -1});
+  });
+
+  {
+    const n = 1400, p = new Float32Array(n * 3);
+    for (let i = 0; i < n; i++) {
+      const u = Math.random() * 2 - 1, th = Math.random() * Math.PI * 2, rr = 140 + Math.random() * 60;
+      p[i * 3] = Math.sqrt(1 - u * u) * Math.cos(th) * rr;
+      p[i * 3 + 1] = Math.abs(u) * rr * .7 - 10;
+      p[i * 3 + 2] = -Math.abs(Math.sqrt(1 - u * u) * Math.sin(th) * rr);
+    }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
+    scene.add(new THREE.Points(g, new THREE.PointsMaterial({color: 0x9aa6ff, size: 1.1, sizeAttenuation: false, transparent: true, opacity: .45, depthWrite: false})));
+  }
+
+  let W = 1, H = 1, baseZ = 42, drop = 0, visible = false, t = 0;
+  function resize() {
+    W = host.clientWidth; H = host.clientHeight;
+    const aspect = W / H, dpr = Math.min(devicePixelRatio || 1, 1.75);
+    renderer.setPixelRatio(dpr); renderer.setSize(W, H, false);
+    camera.aspect = aspect;
+    camera.fov = aspect < 1 ? 34 : 26;
+    baseZ = aspect < 1 ? 42 + (1 - aspect) * 46 : 42;
+    drop = aspect < 1 ? 3.2 : 0;
+    camera.updateProjectionMatrix();
+    rings.forEach(r => r.m.uniforms.uPx.value = dpr * (H / 900));
+  }
+  resize(); addEventListener('resize', resize);
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, {threshold: 0}).observe(host);
+
+  return {
+    tick(dt) {
+      if (!visible) return;
+      if (!REDUCE) t += dt;
+      U.uTime.value = t + cfg.t0;
+      const p = cfg.progress();
+      const intro = REDUCE ? 1 : 1 - Math.pow(1 - Math.min(1, t / 2.6), 3);
+      world.position.y = cfg.baseY - drop - (1 - intro) * 7 + cfg.lift(p);
+      camera.position.set(mouse.x * 2.2, 1 + mouse.y * -1.1 + cfg.camY(p), baseZ + cfg.camZ(p));
+      camera.lookAt(0, -1.4 + cfg.lookY(p), 0);
+      world.rotation.y = mouse.x * .06 + cfg.spin;
+      rings.forEach((r, i) => { r.holder.rotation.y = t * .01 * r.dir + p * .4 * (i % 2 ? -1 : 1); });
+      renderer.render(scene, camera);
+    },
+  };
+}
+
+const heroEl = document.getElementById('hero'), finEl = document.getElementById('finale');
+const scenes = [
+  planetScene(document.getElementById('gl'), heroEl, {
+    t0: 12, baseY: -33.6, spin: 0, mask: [0, .28, 1],
+    rings: [
+      {r: 38, n: 9000, width: .9, tiltX: 1.02, tiltZ: -.14, color: CYAN, speed: .05, size: 1.0, phase: 0},
+      {r: 43.5, n: 12000, width: 1.5, tiltX: 1.08, tiltZ: .05, color: VIOLET, speed: -.035, size: 1.05, phase: 2},
+      {r: 50, n: 9000, width: .7, tiltX: .98, tiltZ: .16, color: PINK, speed: .028, size: .95, phase: 4},
+    ],
+    progress: () => Math.min(1, scrollY / (heroEl.clientHeight || 1)),
+    lift: p => p * 5, camY: p => -p * 2, camZ: p => p * 6, lookY: p => -p * 1.5,
+  }),
+  planetScene(document.getElementById('gl2'), finEl, {
+    t0: 40, baseY: -32.2, spin: 1.4, mask: [0, -.05, .55],
+    rings: [
+      {r: 37, n: 8000, width: .8, tiltX: 1.0, tiltZ: .18, color: PINK, speed: -.045, size: 1.0, phase: 1},
+      {r: 43, n: 11000, width: 1.4, tiltX: 1.1, tiltZ: -.04, color: VIOLET, speed: .032, size: 1.05, phase: 3},
+      {r: 49.5, n: 8000, width: .7, tiltX: .96, tiltZ: -.2, color: CYAN, speed: -.026, size: .95, phase: 5},
+    ],
+    progress: () => { const b = finEl.getBoundingClientRect(); return Math.min(1, Math.max(0, 1 - b.top / innerHeight)); },
+    lift: p => -(1 - p) * 6, camY: () => 0, camZ: () => 0, lookY: () => 0,
+  }),
+].filter(Boolean);
+
+const clock = new THREE.Clock();
+(function loop() {
+  requestAnimationFrame(loop);
+  const dt = Math.min(clock.getDelta(), .05);
+  mouse.x += (mouse.tx - mouse.x) * .04;
+  mouse.y += (mouse.ty - mouse.y) * .04;
+  scenes.forEach(s => s.tick(dt));
+})();
+</script>
+</body>
+</html>
